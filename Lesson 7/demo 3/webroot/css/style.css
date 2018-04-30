@@ -1,0 +1,9 @@
+.wrapper {
+    max-width: 420px;
+    margin: auto;
+}
+
+.wrapper h1 {
+    margin-top: 0px;
+    font-size: 25px;
+}

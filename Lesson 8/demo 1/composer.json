@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/",
+            "System\\" : "system/"
+        }
+    },
+    "require": {
+        "filp/whoops": "^2.1",
+        "phpmailer/phpmailer": "~6.0"
+    }
+}
