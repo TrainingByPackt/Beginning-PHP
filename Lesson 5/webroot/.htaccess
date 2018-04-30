@@ -1,0 +1,22 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+	RewriteBase /
+
+	RewriteCond %{HTTPS} !on
+	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+	# Force to exclude the trailing slash
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} (.*)/$
+	RewriteRule ^(.+)/$ $1 [R=307,L]
+
+	# Allow any files or directories that exist to be displayed directly
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	RewriteRule ^(.*)$ index.php?$1 [QSA,L]
+
+</IfModule>
